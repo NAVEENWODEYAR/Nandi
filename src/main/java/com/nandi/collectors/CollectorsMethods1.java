@@ -14,6 +14,16 @@ public class CollectorsMethods1
 		System.out.println(intList);
 	}
 	
+	// 2. Creating unmodifiable list: toUnmodifiableList()
+	static void unmodifiableLst(List<Integer> lst)
+	{
+		System.out.println("Original list\n");
+		lst.iterator().forEachRemaining(System.out::println);
+		
+		List<Integer> unmodifiableList = lst.parallelStream().distinct().collect(Collectors.toUnmodifiableList());
+		unmodifiableList.add(2);
+	}
+	
 	public static void main(String[] args) 
 	{
 		System.out.println("\nCollectors is a final class that extends the Object class.\n");
@@ -22,6 +32,7 @@ public class CollectorsMethods1
 		System.out.println("\n******\n");
 		oddEvenList(intList);
 		System.out.println("\n******\n");
+		unmodifiableLst(intList);
 		System.out.println("\n******\n");
 	}
 
