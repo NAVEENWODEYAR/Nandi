@@ -1,11 +1,14 @@
 package com.nandi.collectors;
 
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
 public class CollectorsMethods 
 {
+
+	private static LinkedList<Integer> collect;
 
 	//1. toList(),It is used to accumulate elements into a list. It will create a new list (It will not change the current list).
 	static void listFromcolln(List<Integer> list)
@@ -25,6 +28,14 @@ public class CollectorsMethods
 		System.out.println("\n" +collect+" \n");
 	}
 	
+	// 3. toCollection(),We can accumulate data in any specific collection as well.
+	static void collnUsingStream(List<Integer> lst)
+	{
+		System.out.println("\n" +lst+" \n");
+		collect = lst.stream().collect(Collectors.toCollection(LinkedList::new));
+		System.out.println(collect);
+	}
+	
 	public static void main(String[] args) 
 	{
 		System.out.println("\nCollectors is a final class that extends the Object class.\n");
@@ -37,6 +48,7 @@ public class CollectorsMethods
 		System.out.println("\n******\n");
 		setFromColln(intList);
 		System.out.println("\n******\n");
+		collnUsingStream(intList);
 	}
 
 }
