@@ -1,5 +1,6 @@
 package com.nandi.collectors;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
@@ -32,8 +33,16 @@ public class CollectorsMethods
 	static void collnUsingStream(List<Integer> lst)
 	{
 		System.out.println("\n" +lst+" \n");
-		collect = lst.stream().collect(Collectors.toCollection(LinkedList::new));
-		System.out.println(collect);
+		var arrLst = lst.stream().collect(Collectors.toCollection(ArrayList<Integer>::new));
+		System.out.println(arrLst);
+	}
+	
+	// 4.Counting elements: Counting()
+	static void countElements(List<Integer> lst)
+	{
+		System.out.println("\n" +lst+" \n");
+		Long collect2 = lst.parallelStream().collect(Collectors.counting());
+		System.out.println(collect2);
 	}
 	
 	public static void main(String[] args) 
@@ -43,12 +52,16 @@ public class CollectorsMethods
 				+ "\n Java Collectors class provides various methods to deal with elements.n");
 		
 		List<Integer> intList = List.of(1,2,3,4,5,4,3,2);
+//		System.out.println("\n******\n");
+//		listFromcolln(intList);
+//		System.out.println("\n******\n");
+//		setFromColln(intList);
+//		System.out.println("\n******\n");
+//		collnUsingStream(intList);
 		System.out.println("\n******\n");
-		listFromcolln(intList);
+		countElements(intList);
 		System.out.println("\n******\n");
-		setFromColln(intList);
 		System.out.println("\n******\n");
-		collnUsingStream(intList);
 	}
 
 }
