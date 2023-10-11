@@ -42,6 +42,15 @@ public class CollectorsMethods1
 		System.out.println(unmodifiableLSet);
 	}
 	
+	// 4.Joining elements: joining()
+	static void strJoining()
+	{
+		List<String> names = Arrays.asList("Ammie","Bailey","Candy","Denly");
+		System.out.println("\n"+names+"\n");
+		String collect = names.stream().collect(Collectors.joining(",", "{", "}"));
+		System.out.println("After joining the string"+collect);
+	}
+	
 	public static void main(String[] args) 
 	{
 		System.out.println("\nCollectors is a final class that extends the Object class.\n");
@@ -53,5 +62,7 @@ public class CollectorsMethods1
 		unmodifiableLst(intList);
 		System.out.println("\n******\n");
 		unmodifiableLSet(intList);
+		System.out.println("\n******\n");
+		strJoining();
 	}
 }
