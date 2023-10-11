@@ -21,19 +21,25 @@ public class CollectorsMethods1
 		lst.iterator().forEachRemaining(System.out::println);
 		
 		List<Integer> unmodifiableList = lst.parallelStream().distinct().collect(Collectors.toUnmodifiableList());
-		unmodifiableList.add(2);
+		try 
+		{
+			unmodifiableList.add(2);
+		} 
+		catch (Exception e)
+		{
+			System.out.println(e.getLocalizedMessage());
+		}
 	}
 	
 	public static void main(String[] args) 
 	{
 		System.out.println("\nCollectors is a final class that extends the Object class.\n");
 	
-		List<Integer> intList = List.of(1,2,3,4,5,4,3,2);
+		List<Integer> intList = List.of(1,2,3,4,5,4,3,21);
 		System.out.println("\n******\n");
 		oddEvenList(intList);
 		System.out.println("\n******\n");
 		unmodifiableLst(intList);
 		System.out.println("\n******\n");
 	}
-
 }
