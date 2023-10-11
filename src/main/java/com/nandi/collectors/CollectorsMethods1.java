@@ -31,6 +31,17 @@ public class CollectorsMethods1
 		}
 	}
 	
+	// 3. Creating unmodifiable set: toUnmodifiableSet().,
+	static void unmodifiableLSet(List<Integer> list)
+	{
+		Set<Integer> set = list.stream().collect(Collectors.toSet());
+		set.add(34);
+		System.out.println(set);
+		System.out.println("***********\n");
+		Set<Integer> unmodifiableLSet = list.parallelStream().collect(Collectors.toUnmodifiableSet());
+		System.out.println(unmodifiableLSet);
+	}
+	
 	public static void main(String[] args) 
 	{
 		System.out.println("\nCollectors is a final class that extends the Object class.\n");
@@ -41,5 +52,6 @@ public class CollectorsMethods1
 		System.out.println("\n******\n");
 		unmodifiableLst(intList);
 		System.out.println("\n******\n");
+		unmodifiableLSet(intList);
 	}
 }
