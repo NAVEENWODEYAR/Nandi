@@ -66,6 +66,6 @@ public class EmployeeImpl
 			// 6. Count the number of employees in each department?
 			System.out.println("\n Employee count in each department,");
 	
-	
+				employeeList.stream().collect(Collectors.groupingBy(Employee::getDepartment, Collectors.counting()));
 	}
 }
