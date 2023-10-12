@@ -10,7 +10,7 @@ public class CollectorsMethods2
 	static void avgLong(List<Integer> list)
 	{
 		System.out.println("\n It will return a double value, not long value,\n");
-		Double avgLong = list.stream().collect(Collectors.averagingLong(n-> n*2));
+		Double avgLong = list.stream().collect(Collectors.averagingLong(n-> n+1));
 		System.out.println("\nAverage long value in the list,"+avgLong);
 	}
 	
@@ -22,7 +22,14 @@ public class CollectorsMethods2
 		System.out.println("\n Average int value in the list,"+avgInt);
 	}
 	
-	//
+	//3. Averaging Double: averagingDouble(),Finds the average value of a collection of double values.
+	static void avgDouble(List<Integer> list)
+	{
+		Double avgDouble = list.parallelStream().collect(Collectors.averagingDouble(num-> num+1));
+		System.out.println("\n Average double value in the list,"+avgDouble);
+		
+	}
+	
 	public static void main(String[] args) 
 	{
 		System.out.println("\nCollectors is a final class that extends the Object class.\n");
@@ -34,6 +41,7 @@ public class CollectorsMethods2
 		System.out.println("\n******\n");
 		avgInt(intList);
 		System.out.println("\n******\n");
+		avgDouble(intList);
 		System.out.println("\n******\n");
 	}
 }
