@@ -10,7 +10,8 @@ public class CollectorsMethods2
 	static void averageInList(List<Integer> list)
 	{
 		System.out.println("\n It will return a double value, not long value,\n");
-		Double avg = list.stream().collect(Collectors.averagingLong(n-> n*2));
+//		Double avg = list.stream().collect(Collectors.averagingLong(n-> n*2));
+		Double avg = list.stream().collect(Collectors.averagingLong(null));
 		System.out.println("\nAverage value in the list,"+avg);
 	}
 	public static void main(String[] args) 
