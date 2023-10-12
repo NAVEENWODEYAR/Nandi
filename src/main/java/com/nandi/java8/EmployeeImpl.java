@@ -30,7 +30,7 @@ public class EmployeeImpl
 			employeeList.add(new Employee(277, "Vasu", 25, "Male", "Product Development", 2012, 125700.0));
 	
 //			employeeList.forEach(System.out::println);
-			
+			/**
 			//  1.How many male and female employees are there in the organization?
 			System.out.println("\n Gender count in the organization,");
 				Map<String, Long> genderCount = employeeList.stream()
@@ -43,8 +43,11 @@ public class EmployeeImpl
 									.map(Employee::getEmpDepartment)
 									.distinct()
 									.forEach(System.out::println);
-				
-						
-
+			*/
+			// 3 : What is the average age of male and female employees?
+			System.out.println("\n Average age of employees");
+				Map<String, Double> avgAge = employeeList.parallelStream()
+										.collect(Collectors.groupingBy(Employee::getEmpGender,Collectors.averagingDouble(Employee::getEmpAge)));
+				System.out.println(avgAge);
 	}
 }
