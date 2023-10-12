@@ -8,7 +8,7 @@ public class EmployeeImpl
 	{
 		System.out.println("\n*** Employee Management System ******\n");
 		var employeeList = new ArrayList<>(50);
-			employeeList.add(new Employee(111, "Jiya Brein", 32, "Female", "HR", 2011, 25000.0));
+			employeeList.add(new Employee(111, "Jolly", 18, "Female", "HR", 2011, 25000.0));
 			employeeList.add(new Employee(122, "Paul Niksui", 25, "Male", "Sales And Marketing", 2015, 13500.0));
 			employeeList.add(new Employee(133, "Martin Theron", 29, "Male", "Infrastructure", 2012, 18000.0));
 			employeeList.add(new Employee(144, "Murali Gowda", 28, "Male", "Product Development", 2014, 32500.0));
@@ -24,8 +24,10 @@ public class EmployeeImpl
 			employeeList.add(new Employee(244, "Nicolus Den", 24, "Male", "Sales And Marketing", 2017, 10700.5));
 			employeeList.add(new Employee(255, "Ali Baig", 23, "Male", "Infrastructure", 2018, 12700.0));
 			employeeList.add(new Employee(266, "Sanvi Pandey", 26, "Female", "Product Development", 2015, 28900.0));
-			employeeList.add(new Employee(277, "Anuj Chettiar", 31, "Male", "Product Development", 2012, 35700.0));
+			employeeList.add(new Employee(277, "Vasu", 25, "Male", "Product Development", 2012, 125700.0));
 	
-			employeeList.forEach(System.out::println);
+//			employeeList.forEach(System.out::println);
+			
+			//  1.How many male and female employees are there in the organization?
 	}
 }
