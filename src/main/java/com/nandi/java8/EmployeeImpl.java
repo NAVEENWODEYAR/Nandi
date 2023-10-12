@@ -32,9 +32,17 @@ public class EmployeeImpl
 //			employeeList.forEach(System.out::println);
 			
 			//  1.How many male and female employees are there in the organization?
+			System.out.println("\n Gender count in the organization,");
+				Map<String, Long> genderCount = employeeList.stream()
+										.collect(Collectors.groupingBy(Employee::getEmpGender,Collectors.counting()));
+				System.out.println(genderCount);
 			
 			// 2. Print the name of all departments in the organization?
-			employeeList.stream().map(Employee::getEmpGender).distinct().forEach(System.out::println);
+			System.out.println("\n Department available in the organization,");
+						employeeList.stream()	
+									.map(Employee::getEmpDepartment)
+									.distinct()
+									.forEach(System.out::println);
 				
 						
 
