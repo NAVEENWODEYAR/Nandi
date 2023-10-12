@@ -9,10 +9,19 @@ public class SecLargestInArr
 		int largest = 0;
 		int secLargest = 0;
 		
-		for(int i=0; i<names.length-1; i++)
+		for(int i=0; i<names.length; i++)
 		{
-			if()
+			if(names[i] > largest)
+			{
+				secLargest = largest;
+				largest = names[i];
+			}
+			else if(names[i] > secLargest)
+			{
+				secLargest = names[i];
+			}
 		}
+		System.out.println("\n 1. Largest element in the array," +largest+"\n 2. Second largest element in the array,"+secLargest);
 	}
 	public static void main(String[] args)
 	{
@@ -23,6 +32,7 @@ public class SecLargestInArr
 			marks[i]= i; 
 		}
 		System.out.println(Arrays.toString(marks));
+		secLargest(marks);
 	}
 
 }
