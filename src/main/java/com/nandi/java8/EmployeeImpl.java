@@ -7,7 +7,7 @@ public class EmployeeImpl
 {
 	public static void main(String[] args) 
 	{
-		System.out.println("\n*** Employee Management System ******\n");
+		System.out.println("\n*** Employee Management System ******");
 //		List<Employee> employeeList = new ArrayList<>(50);
 		var employeeList = new ArrayList<Employee>();
 		
@@ -43,11 +43,16 @@ public class EmployeeImpl
 									.map(Employee::getEmpDepartment)
 									.distinct()
 									.forEach(System.out::println);
-			*/
-			// 3 : What is the average age of male and female employees?
+			
+			// 3. What is the average age of male and female employees?
 			System.out.println("\n Average age of employees");
 				Map<String, Double> avgAge = employeeList.parallelStream()
 										.collect(Collectors.groupingBy(Employee::getEmpGender,Collectors.averagingDouble(Employee::getEmpAge)));
 				System.out.println(avgAge);
+			*/
+			// 4.Get the details of highest paid employee in the organization?
+			System.out.println("\n Highest paid employee in the organization,");
+				Optional<Employee> maxSal = employeeList.stream().max(Comparator.comparing(Employee::getEmpSalary));
+				System.out.println(maxSal.get());
 	}
 }
