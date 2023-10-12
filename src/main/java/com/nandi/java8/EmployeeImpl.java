@@ -8,7 +8,8 @@ public class EmployeeImpl
 	public static void main(String[] args) 
 	{
 		System.out.println("\n*** Employee Management System ******\n");
-		List<Employee> employeeList = new ArrayList<>(50);
+//		List<Employee> employeeList = new ArrayList<>(50);
+		var employeeList = new ArrayList<Employee>();
 		
 			employeeList.add(new Employee(111, "Jolly", 18, "Female", "HR", 2011, 25000.0));
 			employeeList.add(new Employee(122, "Paul Niksui", 25, "Male", "Sales And Marketing", 2015, 13500.0));
@@ -33,6 +34,7 @@ public class EmployeeImpl
 			//  1.How many male and female employees are there in the organization?
 			
 			// 2. Print the name of all departments in the organization?
+			employeeList.stream().map(Employee::getEmpGender).distinct().forEach(System.out::println);
 				
 						
 
