@@ -14,6 +14,13 @@ public class CollectorsMethods4
 		System.out.println(intMap);
 	}
 	
+	// 2. Summing Integers: summingInt()
+	static void sumOfInt(List<Integer> list)
+	{
+		Integer sum = list.stream().collect(Collectors.summingInt(n->n));
+		System.out.println("Sum of numbers present in the list,"+sum);
+	}
+	
 	public static void main(String[] args) 
 	{
 		System.out.println("\nCollectors is a final class that extends the Object class.\n");
@@ -23,5 +30,6 @@ public class CollectorsMethods4
 		System.out.println("\n******\n");
 		mapUsingColln(intList);
 		System.out.println("\n******\n");
+		sumOfInt(intList);
 	}
 }
