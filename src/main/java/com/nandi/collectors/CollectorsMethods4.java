@@ -10,7 +10,8 @@ public class CollectorsMethods4
 	static void mapUsingColln(List<Integer> list)
 	{
 		System.out.println("\nA Map is an object that maps keys to values.\n");
-		list.stream().collect(Collectors.toMap(Function.identity(), String::length));
+		Map<Integer, Integer> intMap = list.stream().collect(Collectors.toMap(Function.identity(), Integer::intValue));
+		System.out.println(intMap);
 	}
 	
 	public static void main(String[] args) 
@@ -20,7 +21,7 @@ public class CollectorsMethods4
 		List<Integer> intList = List.of(1,2,3,4,5);
 		System.out.println(intList);
 		System.out.println("\n******\n");
-		
+		mapUsingColln(intList);
 		System.out.println("\n******\n");
 	}
 }
