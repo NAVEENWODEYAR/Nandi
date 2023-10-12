@@ -2,7 +2,6 @@ package com.nandi.java8;
 
 import java.util.*;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class EmployeeImpl
 {
@@ -56,12 +55,17 @@ public class EmployeeImpl
 				Optional<Employee> maxSal = employeeList.stream().max(Comparator.comparing(Employee::getEmpSalary));
 				System.out.println(maxSal.get());
 				
-			*/	
+				
 			// 5. Get the names of all employees who have joined after 2015?	
 			System.out.println("\n Employees joined after 2015");
-				Stream<String> employees2015 = employeeList.parallelStream()
-															.filter(emp -> emp.getEmpYearOfJoining() > 2015)
-															.map(emp-> emp.getEmpName());
-				System.out.println(employees2015);
+					employeeList.parallelStream()
+									.filter(emp -> emp.getEmpYearOfJoining() > 2015)
+									.map(emp-> emp.getEmpName())
+									.forEach(System.out::println);
+			*/
+			// 6. Count the number of employees in each department?
+			System.out.println("\n Employee count in each department,");
+	
+	
 	}
 }
