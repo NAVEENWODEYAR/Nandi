@@ -1,6 +1,7 @@
 package com.nandi.java8;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class EmployeeImpl
 {
@@ -29,5 +30,6 @@ public class EmployeeImpl
 //			employeeList.forEach(System.out::println);
 			
 			//  1.How many male and female employees are there in the organization?
+						employeeList.stream().collect(Collectors.groupingBy(Employee::getEmpGender,Collectors.counting()));
 	}
 }
