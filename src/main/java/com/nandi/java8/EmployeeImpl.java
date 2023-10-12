@@ -30,6 +30,8 @@ public class EmployeeImpl
 //			employeeList.forEach(System.out::println);
 			
 			//  1.How many male and female employees are there in the organization?
-						employeeList.stream().collect(Collectors.groupingBy(Employee::getEmpGender,Collectors.counting()));
+			
+			// 2. Print the name of all departments in the organization?
+						employeeList.stream().map(Employee::getEmpDepartment);
 	}
 }
