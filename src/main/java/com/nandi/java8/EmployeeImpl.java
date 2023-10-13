@@ -32,40 +32,39 @@ public class EmployeeImpl
 //			employeeList.forEach(System.out::println);
 			/**
 			//  1.How many male and female employees are there in the organization?
-			System.out.println("\n Gender count in the organization,");
-				Map<String, Long> genderCount = employeeList.stream()
+				System.out.println("\n Gender count in the organization,");
+					Map<String, Long> genderCount = employeeList.stream()
 										.collect(Collectors.groupingBy(Employee::getEmpGender,Collectors.counting()));
 				System.out.println(genderCount);
 			
 			// 2. Print the name of all departments in the organization?
-			System.out.println("\n Department available in the organization,");
+				System.out.println("\n Department available in the organization,");
 						employeeList.stream()	
 									.map(Employee::getEmpDepartment)
 									.distinct()
 									.forEach(System.out::println);
 			
 			// 3. What is the average age of male and female employees?
-			System.out.println("\n Average age of employees");
-				Map<String, Double> avgAge = employeeList.parallelStream()
+				System.out.println("\n Average age of employees");
+					Map<String, Double> avgAge = employeeList.parallelStream()
 										.collect(Collectors.groupingBy(Employee::getEmpGender,Collectors.averagingDouble(Employee::getEmpAge)));
 				System.out.println(avgAge);
 			
 			// 4.Get the details of highest paid employee in the organization?
-			System.out.println("\n Highest paid employee in the organization,");
-				Optional<Employee> maxSal = employeeList.stream().max(Comparator.comparing(Employee::getEmpSalary));
-				System.out.println(maxSal.get());
+				System.out.println("\n Highest paid employee in the organization,");
+					Optional<Employee> maxSal = employeeList.stream().max(Comparator.comparing(Employee::getEmpSalary));
+						System.out.println(maxSal.get());
 				
 				
 			// 5. Get the names of all employees who have joined after 2015?	
-			System.out.println("\n Employees joined after 2015");
+				System.out.println("\n Employees joined after 2015");
 					employeeList.parallelStream()
 									.filter(emp -> emp.getEmpYearOfJoining() > 2015)
 									.map(emp-> emp.getEmpName())
 									.forEach(System.out::println);
 			*/
 			// 6. Count the number of employees in each department?
-			System.out.println("\n Employee count in each department,");
+				System.out.println("\n Employee count in each department,");
 	
-				employeeList.stream().collect(Collectors.groupingBy(Employee::getDepartment, Collectors.counting()));
 	}
 }
