@@ -38,7 +38,7 @@ public class EmployeeImpl
 				System.out.println(genderCount);
 			
 			// 2. Print the name of all departments in the organization?
-				System.out.println("\n Department available in the organization,");
+				System.out.println("\n Departments available in the organization,");
 						employeeList.stream()	
 									.map(Employee::getEmpDepartment)
 									.distinct()
@@ -64,7 +64,7 @@ public class EmployeeImpl
 									.forEach(System.out::println);
 			*/
 			// 6. Count the number of employees in each department?
-				System.out.println("\n Employee count in each department,");
+				System.out.println("\n Employees count in each department,");
 					employeeList.parallelStream()	
 									.collect(Collectors.groupingBy(Employee::getEmpDepartment, Collectors.counting()))
 									.entrySet()
