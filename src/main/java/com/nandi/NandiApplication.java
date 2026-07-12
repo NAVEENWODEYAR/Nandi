@@ -9,7 +9,6 @@ public class NandiApplication
 	public static void main(String[] args) 
 	{
 		SpringApplication.run(NandiApplication.class, args);
-		System.out.println("Nandi gives delight,");
 	}
 
 }
