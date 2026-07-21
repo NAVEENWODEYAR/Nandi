@@ -14,7 +14,7 @@ public class CollectorsMethods
 	//1. toList(),It is used to accumulate elements into a list. It will create a new list (It will not change the current list).
 	static void listFromcolln(List<Integer> list)
 	{
-		System.out.println("\n" +list+" \n");
+		System.out.println("\n Linked list using to list() " +list+" \n");
 		list.stream()
 			.map(num -> num+10)
 			.collect(Collectors.toList())
@@ -24,7 +24,7 @@ public class CollectorsMethods
 	// 2. toSet(), It is used to accumulate elements into a set, It will remove all the duplicate entries.
 	static void setFromColln(List<Integer> intList)
 	{
-		System.out.println("\n" +intList+" \n");
+		System.out.println("\nSet using toSet() " +intList+" \n");
 		Set<Integer> collect = intList.stream().collect(Collectors.toSet());
 		System.out.println("\n" +collect+" \n");
 	}
