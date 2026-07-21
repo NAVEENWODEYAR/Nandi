@@ -25,7 +25,8 @@ public class SecLargestInArr
 	}
 	public static void main(String[] args)
 	{
-		System.out.println("\n Array :- Collection of homogenous elements stored in contiguos memory locations\n");
+		System.out.println("\n Array :- Collection of homogenous elements stored in contiguos memory locations \n");
+System.out.println("Second largest element in Array");
 		int[] marks = new int[5];
 		for(int i=0; i<5; i++)
 		{
