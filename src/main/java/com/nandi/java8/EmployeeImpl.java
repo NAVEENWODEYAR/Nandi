@@ -26,7 +26,7 @@ public class EmployeeImpl
 			employeeList.add(new Employee(233, "Jyothi Reddy", 27, "Female", "Account And Finance", 2013, 21300.0));
 			employeeList.add(new Employee(244, "Nicolus Den", 24, "Male", "Sales And Marketing", 2017, 10700.5));
 			employeeList.add(new Employee(255, "Ali Baig", 23, "Male", "Infrastructure", 2018, 12700.0));
-			employeeList.add(new Employee(266, "Sanvi Pandey", 26, "Female", "Product Development", 2015, 28900.0));
+			employeeList.add(new Employee(266, "Shivani Pandey", 26, "Female", "Product Development", 2015, 28900.0));
 			employeeList.add(new Employee(277, "Vasu", 25, "Male", "Product Development", 2012, 125700.0));
 	
 //			employeeList.forEach(System.out::println);
